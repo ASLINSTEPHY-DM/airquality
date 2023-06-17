@@ -1,0 +1,20 @@
+<body>
+  <div class="container">
+    <h2 class="heading">Country Air Quality</h2>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Enter a country code" required><br><br>
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="error-message" *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div *ngIf="searchedData">
+      <h3>Search Results:</h3>
+      <p><strong>Country:</strong> {{ searchedData.country }}</p>
+      <p><strong>Air Quality:</strong> {{ searchedData.airQuality }}</p>
+      <p><strong>Pollution:</strong> {{ searchedData.pollution }}</p>
+    </div>
+  </div>
+</body>
